@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Logged Out</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #e74c3c;
+        }
+        .btn {
+            font-size: 1.2rem;
+            padding: 12px 25px;
+            border-radius: 5px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .btn-primary {
+            background-color: #3498db;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .thank-you-message {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Logged out Successfully!</h1>
+    <p class="thank-you-message">Thank you for using our service. We hope to see you again soon!</p>
+    <a href="/oauth2/authorization/github" class="btn btn-primary">Login Again</a>
+</div>
+
+</body>
+</html>

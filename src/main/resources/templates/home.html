@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <style>
+        body {
+            background-color: #f4f7fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        .btn {
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .btn-danger {
+            background-color: #e74c3c;
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+        .profile-link,
+        .repo-link {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .profile-link:hover,
+        .repo-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to the Home Page!</h1>
+    <p>You have successfully logged in.</p>
+    <div class="mb-4">
+        <p><strong>User:</strong> <span th:text="${user}"></span></p>
+        <p><strong>Profile Link:</strong> <a th:href="${profileLink}" class="profile-link">Access Profile</a></p>
+        <p><strong>Repositories:</strong> <a th:href="${repos}" class="repo-link">Access Repositories</a></p>
+    </div>
+    <a href="/logout" class="btn btn-danger">Logout</a>
+</div>
+
+</body>
+</html>
