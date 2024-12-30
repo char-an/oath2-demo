@@ -2,6 +2,19 @@
 version: 2.1
 
 jobs:
+  check-system:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - run:
+          name: "Check Base System"
+          command: |
+            echo "OS Information:"
+            uname -a
+            cat /etc/os-release
+            echo "Processor Information:"
+            lscpu
+
   say-hello:
     docker:
       - image: cimg/base:current
@@ -32,7 +45,6 @@ jobs:
 workflows:
   scan-workflow:
     jobs:
+      - check-system
+      - say-hello
       - cloud-defense-scan
-      - say-hello:
-          requires:
-            - cloud-defense-scan
