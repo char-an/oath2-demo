@@ -19,9 +19,11 @@ jobs:
       - run:
           name: "Install Cloud Defense CLI"
           command: |
+            mkdir -p /tmp/bin
             curl -L https://github.com/CloudDefenseAI/cd/releases/latest/download/cd-latest-mac-x64.tar.gz -o /tmp/cd-latest-mac-x64.tar.gz
-            tar -C /usr/local/bin -xzf /tmp/cd-latest-mac-x64.tar.gz
-            chmod +x /usr/local/bin/cdefense
+            tar -C /tmp/bin -xzf /tmp/cd-latest-mac-x64.tar.gz
+            chmod +x /tmp/bin/cdefense
+            export PATH=$PATH:/tmp/bin
       # - run:
       #     name: "Run Cloud Defense Scan"
       #     command: |
