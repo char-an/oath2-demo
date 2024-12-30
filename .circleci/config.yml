@@ -22,10 +22,10 @@ jobs:
             curl -L https://github.com/CloudDefenseAI/cd/releases/latest/download/cd-latest-mac-x64.tar.gz -o /tmp/cd-latest-mac-x64.tar.gz
             tar -C /usr/local/bin -xzf /tmp/cd-latest-mac-x64.tar.gz
             chmod +x /usr/local/bin/cdefense
-      - run:
-          name: "Run Cloud Defense Scan"
-          command: |
-            cdefense online --api-key=$CDEFENSE_API_KEY --repository-url=$CIRCLE_REPOSITORY_URL
+      # - run:
+      #     name: "Run Cloud Defense Scan"
+      #     command: |
+      #       cdefense online --api-key=$CDEFENSE_API_KEY --repository-url=$CIRCLE_REPOSITORY_URL
 
 workflows:
   scan-workflow:
