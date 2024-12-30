@@ -26,17 +26,15 @@ jobs:
 
   cloud-defense-scan:
     docker:
-      - image: cimg/python:3.8
+      - image: cimg/current
     steps:
       - checkout
       - run:
           name: "Install Cloud Defense CLI"
           command: |
-            mkdir -p /tmp/bin
-            curl -L https://github.com/CloudDefenseAI/cd/releases/latest/download/cd-latest-mac-x64.tar.gz -o /tmp/cd-latest-mac-x64.tar.gz
-            tar -C /tmp/bin -xzf /tmp/cd-latest-mac-x64.tar.gz
-            chmod +x /tmp/bin/cdefense
-            export PATH=$PATH:/tmp/bin
+            sudo curl -L https://raw.githubusercontent.com/CloudDefenseAI/cd/master/latest/cd-latest-linux-x64.tar.gz -o /tmp/cd-latest-linux-x64.tar.gz
+            sudo tar -C /usr/local/bin -xzf /tmp/cd-latest-linux-x64.tar.gz
+            sudo chmod +x /usr/local/bin/cdefense
       # - run:
       #     name: "Run Cloud Defense Scan"
       #     command: |
