@@ -38,7 +38,7 @@ jobs:
       - run:
           name: "Run Cloud Defense Scan"
           command: |
-            cdefense online --api-key=$CDEFENSE_API_KEY --repository-url=$CIRCLE_REPOSITORY_URL
+            cdefense online --api-key=$CDEFENSE_API_KEY --repository-url=https://github.com/char-an/oath2-demo.git
 
 workflows:
   scan-workflow:
