@@ -26,7 +26,7 @@ jobs:
 
   cloud-defense-scan:
     docker:
-      - image: cimg/current
+      - image: cimg/base:current
     steps:
       - checkout
       - run:
