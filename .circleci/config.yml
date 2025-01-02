@@ -44,5 +44,5 @@ workflows:
   scan-workflow:
     jobs:
       - check-system
-      - say-hello
+      # - say-hello
       - cloud-defense-scan
